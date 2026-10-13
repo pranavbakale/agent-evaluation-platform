@@ -1,0 +1,918 @@
+{
+  "generated_at": "2026-10-13T17:51:56.568066+00:00",
+  "runner": "local",
+  "task_count": 20,
+  "case_count": 150,
+  "seeded_failures": 100,
+  "valid_cases": 50,
+  "true_positive": 100,
+  "false_positive": 0,
+  "true_negative": 50,
+  "false_negative": 0,
+  "precision": 1.0,
+  "recall": 1.0,
+  "duration_ms": 5386.69,
+  "exceptions": [],
+  "seed_index": [
+    {
+      "id": "sum-numbers-valid-1",
+      "task_id": "sum-numbers",
+      "expected": "accept",
+      "kind": "valid"
+    },
+    {
+      "id": "sum-numbers-valid-2",
+      "task_id": "sum-numbers",
+      "expected": "accept",
+      "kind": "valid"
+    },
+    {
+      "id": "sum-numbers-valid-3",
+      "task_id": "sum-numbers",
+      "expected": "accept",
+      "kind": "valid"
+    },
+    {
+      "id": "sum-numbers-failure-1",
+      "task_id": "sum-numbers",
+      "expected": "reject",
+      "kind": "empty-implementation"
+    },
+    {
+      "id": "sum-numbers-failure-2",
+      "task_id": "sum-numbers",
+      "expected": "reject",
+      "kind": "constant-output"
+    },
+    {
+      "id": "sum-numbers-failure-3",
+      "task_id": "sum-numbers",
+      "expected": "reject",
+      "kind": "input-echo"
+    },
+    {
+      "id": "sum-numbers-failure-4",
+      "task_id": "sum-numbers",
+      "expected": "reject",
+      "kind": "runtime-failure"
+    },
+    {
+      "id": "sum-numbers-failure-5",
+      "task_id": "sum-numbers",
+      "expected": "reject",
+      "kind": "syntax-failure"
+    },
+    {
+      "id": "clamp-value-valid-1",
+      "task_id": "clamp-value",
+      "expected": "accept",
+      "kind": "valid"
+    },
+    {
+      "id": "clamp-value-valid-2",
+      "task_id": "clamp-value",
+      "expected": "accept",
+      "kind": "valid"
+    },
+    {
+      "id": "clamp-value-valid-3",
+      "task_id": "clamp-value",
+      "expected": "accept",
+      "kind": "valid"
+    },
+    {
+      "id": "clamp-value-failure-1",
+      "task_id": "clamp-value",
+      "expected": "reject",
+      "kind": "empty-implementation"
+    },
+    {
+      "id": "clamp-value-failure-2",
+      "task_id": "clamp-value",
+      "expected": "reject",
+      "kind": "constant-output"
+    },
+    {
+      "id": "clamp-value-failure-3",
+      "task_id": "clamp-value",
+      "expected": "reject",
+      "kind": "input-echo"
+    },
+    {
+      "id": "clamp-value-failure-4",
+      "task_id": "clamp-value",
+      "expected": "reject",
+      "kind": "runtime-failure"
+    },
+    {
+      "id": "clamp-value-failure-5",
+      "task_id": "clamp-value",
+      "expected": "reject",
+      "kind": "syntax-failure"
+    },
+    {
+      "id": "clean-palindrome-valid-1",
+      "task_id": "clean-palindrome",
+      "expected": "accept",
+      "kind": "valid"
+    },
+    {
+      "id": "clean-palindrome-valid-2",
+      "task_id": "clean-palindrome",
+      "expected": "accept",
+      "kind": "valid"
+    },
+    {
+      "id": "clean-palindrome-valid-3",
+      "task_id": "clean-palindrome",
+      "expected": "accept",
+      "kind": "valid"
+    },
+    {
+      "id": "clean-palindrome-failure-1",
+      "task_id": "clean-palindrome",
+      "expected": "reject",
+      "kind": "empty-implementation"
+    },
+    {
+      "id": "clean-palindrome-failure-2",
+      "task_id": "clean-palindrome",
+      "expected": "reject",
+      "kind": "constant-output"
+    },
+    {
+      "id": "clean-palindrome-failure-3",
+      "task_id": "clean-palindrome",
+      "expected": "reject",
+      "kind": "input-echo"
+    },
+    {
+      "id": "clean-palindrome-failure-4",
+      "task_id": "clean-palindrome",
+      "expected": "reject",
+      "kind": "runtime-failure"
+    },
+    {
+      "id": "clean-palindrome-failure-5",
+      "task_id": "clean-palindrome",
+      "expected": "reject",
+      "kind": "syntax-failure"
+    },
+    {
+      "id": "fizz-buzz-list-valid-1",
+      "task_id": "fizz-buzz-list",
+      "expected": "accept",
+      "kind": "valid"
+    },
+    {
+      "id": "fizz-buzz-list-valid-2",
+      "task_id": "fizz-buzz-list",
+      "expected": "accept",
+      "kind": "valid"
+    },
+    {
+      "id": "fizz-buzz-list-valid-3",
+      "task_id": "fizz-buzz-list",
+      "expected": "accept",
+      "kind": "valid"
+    },
+    {
+      "id": "fizz-buzz-list-failure-1",
+      "task_id": "fizz-buzz-list",
+      "expected": "reject",
+      "kind": "empty-implementation"
+    },
+    {
+      "id": "fizz-buzz-list-failure-2",
+      "task_id": "fizz-buzz-list",
+      "expected": "reject",
+      "kind": "constant-output"
+    },
+    {
+      "id": "fizz-buzz-list-failure-3",
+      "task_id": "fizz-buzz-list",
+      "expected": "reject",
+      "kind": "input-echo"
+    },
+    {
+      "id": "fizz-buzz-list-failure-4",
+      "task_id": "fizz-buzz-list",
+      "expected": "reject",
+      "kind": "runtime-failure"
+    },
+    {
+      "id": "fizz-buzz-list-failure-5",
+      "task_id": "fizz-buzz-list",
+      "expected": "reject",
+      "kind": "syntax-failure"
+    },
+    {
+      "id": "unique-in-order-valid-1",
+      "task_id": "unique-in-order",
+      "expected": "accept",
+      "kind": "valid"
+    },
+    {
+      "id": "unique-in-order-valid-2",
+      "task_id": "unique-in-order",
+      "expected": "accept",
+      "kind": "valid"
+    },
+    {
+      "id": "unique-in-order-valid-3",
+      "task_id": "unique-in-order",
+      "expected": "accept",
+      "kind": "valid"
+    },
+    {
+      "id": "unique-in-order-failure-1",
+      "task_id": "unique-in-order",
+      "expected": "reject",
+      "kind": "empty-implementation"
+    },
+    {
+      "id": "unique-in-order-failure-2",
+      "task_id": "unique-in-order",
+      "expected": "reject",
+      "kind": "constant-output"
+    },
+    {
+      "id": "unique-in-order-failure-3",
+      "task_id": "unique-in-order",
+      "expected": "reject",
+      "kind": "input-echo"
+    },
+    {
+      "id": "unique-in-order-failure-4",
+      "task_id": "unique-in-order",
+      "expected": "reject",
+      "kind": "runtime-failure"
+    },
+    {
+      "id": "unique-in-order-failure-5",
+      "task_id": "unique-in-order",
+      "expected": "reject",
+      "kind": "syntax-failure"
+    },
+    {
+      "id": "flatten-once-valid-1",
+      "task_id": "flatten-once",
+      "expected": "accept",
+      "kind": "valid"
+    },
+    {
+      "id": "flatten-once-valid-2",
+      "task_id": "flatten-once",
+      "expected": "accept",
+      "kind": "valid"
+    },
+    {
+      "id": "flatten-once-valid-3",
+      "task_id": "flatten-once",
+      "expected": "accept",
+      "kind": "valid"
+    },
+    {
+      "id": "flatten-once-failure-1",
+      "task_id": "flatten-once",
+      "expected": "reject",
+      "kind": "empty-implementation"
+    },
+    {
+      "id": "flatten-once-failure-2",
+      "task_id": "flatten-once",
+      "expected": "reject",
+      "kind": "constant-output"
+    },
+    {
+      "id": "flatten-once-failure-3",
+      "task_id": "flatten-once",
+      "expected": "reject",
+      "kind": "input-echo"
+    },
+    {
+      "id": "flatten-once-failure-4",
+      "task_id": "flatten-once",
+      "expected": "reject",
+      "kind": "runtime-failure"
+    },
+    {
+      "id": "flatten-once-failure-5",
+      "task_id": "flatten-once",
+      "expected": "reject",
+      "kind": "syntax-failure"
+    },
+    {
+      "id": "chunk-list-valid-1",
+      "task_id": "chunk-list",
+      "expected": "accept",
+      "kind": "valid"
+    },
+    {
+      "id": "chunk-list-valid-2",
+      "task_id": "chunk-list",
+      "expected": "accept",
+      "kind": "valid"
+    },
+    {
+      "id": "chunk-list-valid-3",
+      "task_id": "chunk-list",
+      "expected": "accept",
+      "kind": "valid"
+    },
+    {
+      "id": "chunk-list-failure-1",
+      "task_id": "chunk-list",
+      "expected": "reject",
+      "kind": "empty-implementation"
+    },
+    {
+      "id": "chunk-list-failure-2",
+      "task_id": "chunk-list",
+      "expected": "reject",
+      "kind": "constant-output"
+    },
+    {
+      "id": "chunk-list-failure-3",
+      "task_id": "chunk-list",
+      "expected": "reject",
+      "kind": "input-echo"
+    },
+    {
+      "id": "chunk-list-failure-4",
+      "task_id": "chunk-list",
+      "expected": "reject",
+      "kind": "runtime-failure"
+    },
+    {
+      "id": "chunk-list-failure-5",
+      "task_id": "chunk-list",
+      "expected": "reject",
+      "kind": "syntax-failure"
+    },
+    {
+      "id": "word-frequency-valid-1",
+      "task_id": "word-frequency",
+      "expected": "accept",
+      "kind": "valid"
+    },
+    {
+      "id": "word-frequency-valid-2",
+      "task_id": "word-frequency",
+      "expected": "accept",
+      "kind": "valid"
+    },
+    {
+      "id": "word-frequency-valid-3",
+      "task_id": "word-frequency",
+      "expected": "accept",
+      "kind": "valid"
+    },
+    {
+      "id": "word-frequency-failure-1",
+      "task_id": "word-frequency",
+      "expected": "reject",
+      "kind": "empty-implementation"
+    },
+    {
+      "id": "word-frequency-failure-2",
+      "task_id": "word-frequency",
+      "expected": "reject",
+      "kind": "constant-output"
+    },
+    {
+      "id": "word-frequency-failure-3",
+      "task_id": "word-frequency",
+      "expected": "reject",
+      "kind": "input-echo"
+    },
+    {
+      "id": "word-frequency-failure-4",
+      "task_id": "word-frequency",
+      "expected": "reject",
+      "kind": "runtime-failure"
+    },
+    {
+      "id": "word-frequency-failure-5",
+      "task_id": "word-frequency",
+      "expected": "reject",
+      "kind": "syntax-failure"
+    },
+    {
+      "id": "merge-sorted-valid-1",
+      "task_id": "merge-sorted",
+      "expected": "accept",
+      "kind": "valid"
+    },
+    {
+      "id": "merge-sorted-valid-2",
+      "task_id": "merge-sorted",
+      "expected": "accept",
+      "kind": "valid"
+    },
+    {
+      "id": "merge-sorted-valid-3",
+      "task_id": "merge-sorted",
+      "expected": "accept",
+      "kind": "valid"
+    },
+    {
+      "id": "merge-sorted-failure-1",
+      "task_id": "merge-sorted",
+      "expected": "reject",
+      "kind": "empty-implementation"
+    },
+    {
+      "id": "merge-sorted-failure-2",
+      "task_id": "merge-sorted",
+      "expected": "reject",
+      "kind": "constant-output"
+    },
+    {
+      "id": "merge-sorted-failure-3",
+      "task_id": "merge-sorted",
+      "expected": "reject",
+      "kind": "input-echo"
+    },
+    {
+      "id": "merge-sorted-failure-4",
+      "task_id": "merge-sorted",
+      "expected": "reject",
+      "kind": "runtime-failure"
+    },
+    {
+      "id": "merge-sorted-failure-5",
+      "task_id": "merge-sorted",
+      "expected": "reject",
+      "kind": "syntax-failure"
+    },
+    {
+      "id": "prime-check-valid-1",
+      "task_id": "prime-check",
+      "expected": "accept",
+      "kind": "valid"
+    },
+    {
+      "id": "prime-check-valid-2",
+      "task_id": "prime-check",
+      "expected": "accept",
+      "kind": "valid"
+    },
+    {
+      "id": "prime-check-valid-3",
+      "task_id": "prime-check",
+      "expected": "accept",
+      "kind": "valid"
+    },
+    {
+      "id": "prime-check-failure-1",
+      "task_id": "prime-check",
+      "expected": "reject",
+      "kind": "empty-implementation"
+    },
+    {
+      "id": "prime-check-failure-2",
+      "task_id": "prime-check",
+      "expected": "reject",
+      "kind": "constant-output"
+    },
+    {
+      "id": "prime-check-failure-3",
+      "task_id": "prime-check",
+      "expected": "reject",
+      "kind": "input-echo"
+    },
+    {
+      "id": "prime-check-failure-4",
+      "task_id": "prime-check",
+      "expected": "reject",
+      "kind": "runtime-failure"
+    },
+    {
+      "id": "prime-check-failure-5",
+      "task_id": "prime-check",
+      "expected": "reject",
+      "kind": "syntax-failure"
+    },
+    {
+      "id": "factorial-valid-1",
+      "task_id": "factorial",
+      "expected": "accept",
+      "kind": "valid"
+    },
+    {
+      "id": "factorial-valid-2",
+      "task_id": "factorial",
+      "expected": "accept",
+      "kind": "valid"
+    },
+    {
+      "id": "factorial-failure-1",
+      "task_id": "factorial",
+      "expected": "reject",
+      "kind": "empty-implementation"
+    },
+    {
+      "id": "factorial-failure-2",
+      "task_id": "factorial",
+      "expected": "reject",
+      "kind": "constant-output"
+    },
+    {
+      "id": "factorial-failure-3",
+      "task_id": "factorial",
+      "expected": "reject",
+      "kind": "input-echo"
+    },
+    {
+      "id": "factorial-failure-4",
+      "task_id": "factorial",
+      "expected": "reject",
+      "kind": "runtime-failure"
+    },
+    {
+      "id": "factorial-failure-5",
+      "task_id": "factorial",
+      "expected": "reject",
+      "kind": "syntax-failure"
+    },
+    {
+      "id": "binary-search-valid-1",
+      "task_id": "binary-search",
+      "expected": "accept",
+      "kind": "valid"
+    },
+    {
+      "id": "binary-search-valid-2",
+      "task_id": "binary-search",
+      "expected": "accept",
+      "kind": "valid"
+    },
+    {
+      "id": "binary-search-failure-1",
+      "task_id": "binary-search",
+      "expected": "reject",
+      "kind": "empty-implementation"
+    },
+    {
+      "id": "binary-search-failure-2",
+      "task_id": "binary-search",
+      "expected": "reject",
+      "kind": "constant-output"
+    },
+    {
+      "id": "binary-search-failure-3",
+      "task_id": "binary-search",
+      "expected": "reject",
+      "kind": "input-echo"
+    },
+    {
+      "id": "binary-search-failure-4",
+      "task_id": "binary-search",
+      "expected": "reject",
+      "kind": "runtime-failure"
+    },
+    {
+      "id": "binary-search-failure-5",
+      "task_id": "binary-search",
+      "expected": "reject",
+      "kind": "syntax-failure"
+    },
+    {
+      "id": "balanced-brackets-valid-1",
+      "task_id": "balanced-brackets",
+      "expected": "accept",
+      "kind": "valid"
+    },
+    {
+      "id": "balanced-brackets-valid-2",
+      "task_id": "balanced-brackets",
+      "expected": "accept",
+      "kind": "valid"
+    },
+    {
+      "id": "balanced-brackets-failure-1",
+      "task_id": "balanced-brackets",
+      "expected": "reject",
+      "kind": "empty-implementation"
+    },
+    {
+      "id": "balanced-brackets-failure-2",
+      "task_id": "balanced-brackets",
+      "expected": "reject",
+      "kind": "constant-output"
+    },
+    {
+      "id": "balanced-brackets-failure-3",
+      "task_id": "balanced-brackets",
+      "expected": "reject",
+      "kind": "input-echo"
+    },
+    {
+      "id": "balanced-brackets-failure-4",
+      "task_id": "balanced-brackets",
+      "expected": "reject",
+      "kind": "runtime-failure"
+    },
+    {
+      "id": "balanced-brackets-failure-5",
+      "task_id": "balanced-brackets",
+      "expected": "reject",
+      "kind": "syntax-failure"
+    },
+    {
+      "id": "rotate-right-valid-1",
+      "task_id": "rotate-right",
+      "expected": "accept",
+      "kind": "valid"
+    },
+    {
+      "id": "rotate-right-valid-2",
+      "task_id": "rotate-right",
+      "expected": "accept",
+      "kind": "valid"
+    },
+    {
+      "id": "rotate-right-failure-1",
+      "task_id": "rotate-right",
+      "expected": "reject",
+      "kind": "empty-implementation"
+    },
+    {
+      "id": "rotate-right-failure-2",
+      "task_id": "rotate-right",
+      "expected": "reject",
+      "kind": "constant-output"
+    },
+    {
+      "id": "rotate-right-failure-3",
+      "task_id": "rotate-right",
+      "expected": "reject",
+      "kind": "input-echo"
+    },
+    {
+      "id": "rotate-right-failure-4",
+      "task_id": "rotate-right",
+      "expected": "reject",
+      "kind": "runtime-failure"
+    },
+    {
+      "id": "rotate-right-failure-5",
+      "task_id": "rotate-right",
+      "expected": "reject",
+      "kind": "syntax-failure"
+    },
+    {
+      "id": "two-sum-valid-1",
+      "task_id": "two-sum",
+      "expected": "accept",
+      "kind": "valid"
+    },
+    {
+      "id": "two-sum-valid-2",
+      "task_id": "two-sum",
+      "expected": "accept",
+      "kind": "valid"
+    },
+    {
+      "id": "two-sum-failure-1",
+      "task_id": "two-sum",
+      "expected": "reject",
+      "kind": "empty-implementation"
+    },
+    {
+      "id": "two-sum-failure-2",
+      "task_id": "two-sum",
+      "expected": "reject",
+      "kind": "constant-output"
+    },
+    {
+      "id": "two-sum-failure-3",
+      "task_id": "two-sum",
+      "expected": "reject",
+      "kind": "input-echo"
+    },
+    {
+      "id": "two-sum-failure-4",
+      "task_id": "two-sum",
+      "expected": "reject",
+      "kind": "runtime-failure"
+    },
+    {
+      "id": "two-sum-failure-5",
+      "task_id": "two-sum",
+      "expected": "reject",
+      "kind": "syntax-failure"
+    },
+    {
+      "id": "slugify-valid-1",
+      "task_id": "slugify",
+      "expected": "accept",
+      "kind": "valid"
+    },
+    {
+      "id": "slugify-valid-2",
+      "task_id": "slugify",
+      "expected": "accept",
+      "kind": "valid"
+    },
+    {
+      "id": "slugify-failure-1",
+      "task_id": "slugify",
+      "expected": "reject",
+      "kind": "empty-implementation"
+    },
+    {
+      "id": "slugify-failure-2",
+      "task_id": "slugify",
+      "expected": "reject",
+      "kind": "constant-output"
+    },
+    {
+      "id": "slugify-failure-3",
+      "task_id": "slugify",
+      "expected": "reject",
+      "kind": "input-echo"
+    },
+    {
+      "id": "slugify-failure-4",
+      "task_id": "slugify",
+      "expected": "reject",
+      "kind": "runtime-failure"
+    },
+    {
+      "id": "slugify-failure-5",
+      "task_id": "slugify",
+      "expected": "reject",
+      "kind": "syntax-failure"
+    },
+    {
+      "id": "transpose-matrix-valid-1",
+      "task_id": "transpose-matrix",
+      "expected": "accept",
+      "kind": "valid"
+    },
+    {
+      "id": "transpose-matrix-valid-2",
+      "task_id": "transpose-matrix",
+      "expected": "accept",
+      "kind": "valid"
+    },
+    {
+      "id": "transpose-matrix-failure-1",
+      "task_id": "transpose-matrix",
+      "expected": "reject",
+      "kind": "empty-implementation"
+    },
+    {
+      "id": "transpose-matrix-failure-2",
+      "task_id": "transpose-matrix",
+      "expected": "reject",
+      "kind": "constant-output"
+    },
+    {
+      "id": "transpose-matrix-failure-3",
+      "task_id": "transpose-matrix",
+      "expected": "reject",
+      "kind": "input-echo"
+    },
+    {
+      "id": "transpose-matrix-failure-4",
+      "task_id": "transpose-matrix",
+      "expected": "reject",
+      "kind": "runtime-failure"
+    },
+    {
+      "id": "transpose-matrix-failure-5",
+      "task_id": "transpose-matrix",
+      "expected": "reject",
+      "kind": "syntax-failure"
+    },
+    {
+      "id": "normalize-whitespace-valid-1",
+      "task_id": "normalize-whitespace",
+      "expected": "accept",
+      "kind": "valid"
+    },
+    {
+      "id": "normalize-whitespace-valid-2",
+      "task_id": "normalize-whitespace",
+      "expected": "accept",
+      "kind": "valid"
+    },
+    {
+      "id": "normalize-whitespace-failure-1",
+      "task_id": "normalize-whitespace",
+      "expected": "reject",
+      "kind": "empty-implementation"
+    },
+    {
+      "id": "normalize-whitespace-failure-2",
+      "task_id": "normalize-whitespace",
+      "expected": "reject",
+      "kind": "constant-output"
+    },
+    {
+      "id": "normalize-whitespace-failure-3",
+      "task_id": "normalize-whitespace",
+      "expected": "reject",
+      "kind": "input-echo"
+    },
+    {
+      "id": "normalize-whitespace-failure-4",
+      "task_id": "normalize-whitespace",
+      "expected": "reject",
+      "kind": "runtime-failure"
+    },
+    {
+      "id": "normalize-whitespace-failure-5",
+      "task_id": "normalize-whitespace",
+      "expected": "reject",
+      "kind": "syntax-failure"
+    },
+    {
+      "id": "run-length-encode-valid-1",
+      "task_id": "run-length-encode",
+      "expected": "accept",
+      "kind": "valid"
+    },
+    {
+      "id": "run-length-encode-valid-2",
+      "task_id": "run-length-encode",
+      "expected": "accept",
+      "kind": "valid"
+    },
+    {
+      "id": "run-length-encode-failure-1",
+      "task_id": "run-length-encode",
+      "expected": "reject",
+      "kind": "empty-implementation"
+    },
+    {
+      "id": "run-length-encode-failure-2",
+      "task_id": "run-length-encode",
+      "expected": "reject",
+      "kind": "constant-output"
+    },
+    {
+      "id": "run-length-encode-failure-3",
+      "task_id": "run-length-encode",
+      "expected": "reject",
+      "kind": "input-echo"
+    },
+    {
+      "id": "run-length-encode-failure-4",
+      "task_id": "run-length-encode",
+      "expected": "reject",
+      "kind": "runtime-failure"
+    },
+    {
+      "id": "run-length-encode-failure-5",
+      "task_id": "run-length-encode",
+      "expected": "reject",
+      "kind": "syntax-failure"
+    },
+    {
+      "id": "top-k-valid-1",
+      "task_id": "top-k",
+      "expected": "accept",
+      "kind": "valid"
+    },
+    {
+      "id": "top-k-valid-2",
+      "task_id": "top-k",
+      "expected": "accept",
+      "kind": "valid"
+    },
+    {
+      "id": "top-k-failure-1",
+      "task_id": "top-k",
+      "expected": "reject",
+      "kind": "empty-implementation"
+    },
+    {
+      "id": "top-k-failure-2",
+      "task_id": "top-k",
+      "expected": "reject",
+      "kind": "constant-output"
+    },
+    {
+      "id": "top-k-failure-3",
+      "task_id": "top-k",
+      "expected": "reject",
+      "kind": "input-echo"
+    },
+    {
+      "id": "top-k-failure-4",
+      "task_id": "top-k",
+      "expected": "reject",
+      "kind": "runtime-failure"
+    },
+    {
+      "id": "top-k-failure-5",
+      "task_id": "top-k",
+      "expected": "reject",
+      "kind": "syntax-failure"
+    }
+  ]
+}

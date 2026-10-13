@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Deterministic evaluation for Python coding tasks." />
+    <title>Baseline — Agent Evaluation</title>
+    <link rel="stylesheet" href="/static/styles.css?v=1" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Primary navigation">
+        <a class="brand" href="#overview" aria-label="Baseline home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" role="img">
+              <path d="M6 7.5h12.5a6 6 0 0 1 0 12H13" />
+              <path d="M26 24.5H13.5a6 6 0 0 1 0-12H19" />
+            </svg>
+          </span>
+          <span>
+            <strong>baseline</strong>
+            <small>evaluation suite</small>
+          </span>
+        </a>
+
+        <nav class="nav-list">
+          <button class="nav-item active" data-route="overview">
+            <span class="nav-icon">⌂</span><span>Overview</span>
+          </button>
+          <button class="nav-item" data-route="tasks">
+            <span class="nav-icon">◇</span><span>Task library</span>
+            <span class="nav-count" id="nav-task-count">20</span>
+          </button>
+          <button class="nav-item" data-route="runs">
+            <span class="nav-icon">↗</span><span>Run history</span>
+          </button>
+          <button class="nav-item" data-route="validation">
+            <span class="nav-icon">✓</span><span>Verifier quality</span>
+          </button>
+        </nav>
+
+        <div class="sidebar-card">
+          <div class="status-row">
+            <span class="status-dot"></span>
+            <span>Runner online</span>
+          </div>
+          <p>Submissions execute inside a restricted, network-free workspace.</p>
+          <span class="runner-pill" id="runner-label">checking…</span>
+        </div>
+
+        <div class="sidebar-footer">
+          <span class="avatar">PB</span>
+          <span><strong>Evaluation workspace</strong><small>Local environment</small></span>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <button class="mobile-menu" id="mobile-menu" aria-label="Toggle menu">☰</button>
+          <div class="breadcrumb"><span>Workspace</span><b>/</b><strong id="page-label">Overview</strong></div>
+          <div class="topbar-actions">
+            <button class="command-button" id="quick-find"><span>⌕</span> Quick find <kbd>/</kbd></button>
+            <a class="icon-button" href="/api/docs" target="_blank" aria-label="Open API documentation">↗</a>
+          </div>
+        </header>
+
+        <section class="view active" id="view-overview" data-view="overview">
+          <div class="hero">
+            <div class="hero-copy">
+              <span class="eyebrow"><i></i> Evaluation control room</span>
+              <h1>Ship changes,<br /><em>not regressions.</em></h1>
+              <p>Run deterministic checks across a focused Python task suite. Inspect every case, compare outcomes, and know exactly what changed.</p>
+              <div class="hero-actions">
+                <button class="button primary" data-go="tasks">Explore task library <span>→</span></button>
+                <button class="button secondary" data-go="validation">View verifier quality</button>
+              </div>
+            </div>
+            <div class="hero-visual" aria-hidden="true">
+              <div class="orbit orbit-one"></div>
+              <div class="orbit orbit-two"></div>
+              <div class="signal-card signal-main">
+                <span class="signal-label">Latest check</span>
+                <strong><i class="check">✓</i> All cases passed</strong>
+                <div class="signal-progress"><span></span></div>
+                <small>4 / 4 deterministic checks</small>
+              </div>
+              <div class="signal-card signal-small top"><span>precision</span><strong id="hero-precision">100%</strong></div>
+              <div class="signal-card signal-small bottom"><span>seeded cases</span><strong>150</strong></div>
+              <span class="spark spark-one">✦</span><span class="spark spark-two">✦</span>
+            </div>
+          </div>
+
+          <div class="metric-grid">
+            <article class="metric-card accent-lime">
+              <div><span>Task coverage</span><small>curated Python exercises</small></div>
+              <strong id="metric-tasks">20</strong>
+              <div class="metric-meta"><span class="trend">↗ complete suite</span><span>6 categories</span></div>
+            </article>
+            <article class="metric-card accent-blue">
+              <div><span>Verifier precision</span><small>defects reported correctly</small></div>
+              <strong id="metric-precision">100%</strong>
+              <div class="metric-meta"><span class="trend">✓ no false positives</span><span>50 valid</span></div>
+            </article>
+            <article class="metric-card accent-coral">
+              <div><span>Verifier recall</span><small>seeded failures detected</small></div>
+              <strong id="metric-recall">100%</strong>
+              <div class="metric-meta"><span class="trend">✓ no missed defects</span><span>100 failures</span></div>
+            </article>
+            <article class="metric-card accent-violet">
+              <div><span>Workspace runs</span><small>saved evaluation traces</small></div>
+              <strong id="metric-runs">0</strong>
+              <div class="metric-meta"><span id="metric-pass-rate">No runs yet</span><span id="metric-average">— avg</span></div>
+            </article>
+          </div>
+
+          <div class="dashboard-grid">
+            <article class="panel activity-panel">
+              <div class="panel-heading">
+                <div><span class="section-kicker">Workspace signal</span><h2>Recent evaluations</h2></div>
+                <button class="text-button" data-go="runs">See all runs <span>→</span></button>
+              </div>
+              <div id="recent-runs" class="recent-runs empty-state compact">
+                <div class="empty-icon">↗</div>
+                <strong>No evaluations yet</strong>
+                <p>Choose a task and run a submission to create the first trace.</p>
+                <button class="button tiny" data-go="tasks">Choose a task</button>
+              </div>
+            </article>
+
+            <article class="panel quality-panel">
+              <div class="panel-heading">
+                <div><span class="section-kicker">Verifier health</span><h2>Quality gate</h2></div>
+                <span class="healthy-badge"><i></i> Healthy</span>
+              </div>
+              <div class="quality-body">
+                <div class="quality-ring" style="--score: 100"><span><strong>100</strong><small>/ 100</small></span></div>
+                <div class="quality-legend">
+                  <div><i class="legend-lime"></i><span>Seeded failures</span><strong>100 / 100</strong></div>
+                  <div><i class="legend-blue"></i><span>Valid cases</span><strong>50 / 50</strong></div>
+                  <div><i class="legend-muted"></i><span>Exceptions</span><strong>0</strong></div>
+                </div>
+              </div>
+              <button class="quality-link" data-go="validation">Open validation report <span>↗</span></button>
+            </article>
+          </div>
+        </section>
+
+        <section class="view" id="view-tasks" data-view="tasks">
+          <div class="page-heading">
+            <div><span class="eyebrow"><i></i> Curated suite</span><h1>Task library</h1><p>Twenty focused exercises, each backed by deterministic edge-case checks.</p></div>
+            <div class="heading-stat"><strong>20</strong><span>tasks ready</span></div>
+          </div>
+          <div class="filter-bar">
+            <label class="search-field"><span>⌕</span><input id="task-search" type="search" placeholder="Search by title or category" /></label>
+            <div class="filter-chips" id="category-filters"></div>
+          </div>
+          <div class="task-grid" id="task-grid"><div class="loading-card">Loading task catalog…</div></div>
+        </section>
+
+        <section class="view" id="view-runs" data-view="runs">
+          <div class="page-heading">
+            <div><span class="eyebrow"><i></i> Trace ledger</span><h1>Run history</h1><p>Every verdict is saved with its case-level evidence and execution timing.</p></div>
+            <button class="button primary" data-go="tasks">New evaluation <span>＋</span></button>
+          </div>
+          <div class="panel table-panel">
+            <div class="table-toolbar"><strong>Evaluation traces</strong><span id="run-total-label">0 total</span></div>
+            <div class="run-table" id="run-table"></div>
+          </div>
+        </section>
+
+        <section class="view" id="view-validation" data-view="validation">
+          <div class="page-heading validation-heading">
+            <div><span class="eyebrow"><i></i> Reproducible evidence</span><h1>Verifier quality</h1><p>A fixed corpus measures whether the checks reject known defects without blocking valid solutions.</p></div>
+            <span class="report-badge">Latest benchmark <b>passed</b></span>
+          </div>
+          <div class="validation-hero panel">
+            <div class="validation-score">
+              <span>Overall quality score</span><strong>100<small>/100</small></strong><p>All 150 benchmark cases produced the expected verdict.</p>
+            </div>
+            <div class="validation-measures">
+              <div><span>Precision</span><strong id="validation-precision">100%</strong><small>No valid solution rejected</small></div>
+              <div><span>Recall</span><strong id="validation-recall">100%</strong><small>No seeded defect missed</small></div>
+              <div><span>Coverage</span><strong>20/20</strong><small>Every task represented</small></div>
+            </div>
+          </div>
+          <div class="validation-grid">
+            <article class="panel corpus-panel">
+              <div class="panel-heading"><div><span class="section-kicker">Corpus composition</span><h2>150 controlled cases</h2></div></div>
+              <div class="corpus-bar"><span class="failures" style="width:66.666%"></span><span class="valids" style="width:33.334%"></span></div>
+              <div class="corpus-rows">
+                <div><i class="coral-dot"></i><span><strong>100 seeded failures</strong><small>Five defect patterns per task</small></span><b>66.7%</b></div>
+                <div><i class="blue-dot"></i><span><strong>50 valid cases</strong><small>Equivalent correct implementations</small></span><b>33.3%</b></div>
+              </div>
+            </article>
+            <article class="panel matrix-panel">
+              <div class="panel-heading"><div><span class="section-kicker">Confusion matrix</span><h2>Expected vs. observed</h2></div></div>
+              <div class="matrix">
+                <div class="matrix-axis top"><span>Rejected</span><span>Accepted</span></div>
+                <div class="matrix-axis side"><span>Failure</span><span>Valid</span></div>
+                <div class="matrix-cell good"><strong>100</strong><small>detected defects</small></div>
+                <div class="matrix-cell neutral"><strong>0</strong><small>missed defects</small></div>
+                <div class="matrix-cell neutral"><strong>0</strong><small>false positives</small></div>
+                <div class="matrix-cell good blue"><strong>50</strong><small>accepted valid</small></div>
+              </div>
+            </article>
+          </div>
+          <article class="panel method-panel">
+            <span class="method-index">01</span><div><strong>Fixed inputs</strong><p>Every case uses committed inputs and expected outputs.</p></div>
+            <span class="method-arrow">→</span><span class="method-index">02</span><div><strong>Restricted execution</strong><p>Network, memory, CPU, and process access are bounded.</p></div>
+            <span class="method-arrow">→</span><span class="method-index">03</span><div><strong>Recorded verdict</strong><p>Case traces make every decision inspectable.</p></div>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <div class="drawer-backdrop" id="drawer-backdrop"></div>
+    <aside class="task-drawer" id="task-drawer" aria-label="Task workspace" aria-hidden="true">
+      <div class="drawer-header">
+        <div><span class="task-number" id="drawer-number">TASK 01</span><h2 id="drawer-title">Task title</h2></div>
+        <button class="close-button" id="close-drawer" aria-label="Close task workspace">×</button>
+      </div>
+      <div class="drawer-content">
+        <div class="brief-card">
+          <div class="task-meta"><span id="drawer-difficulty">Easy</span><span id="drawer-category">Collections</span><code id="drawer-signature">function()</code></div>
+          <p id="drawer-instructions"></p>
+        </div>
+        <div class="editor-shell">
+          <div class="editor-toolbar"><span><i></i> solution.py</span><span>Python 3.12</span></div>
+          <div class="editor-wrap"><div class="line-numbers" id="line-numbers">1<br />2<br />3</div><textarea id="code-editor" spellcheck="false" aria-label="Python solution"></textarea></div>
+        </div>
+        <div class="run-actions"><span><kbd>⌘</kbd><kbd>↵</kbd> to evaluate</span><button class="button primary run-button" id="run-evaluation"><span class="button-label">Run evaluation</span><span class="button-spinner"></span><b>▶</b></button></div>
+        <div class="result-panel" id="result-panel" aria-live="polite">
+          <div class="result-placeholder"><span>⌁</span><strong>Ready when you are</strong><p>Run the code to see a case-by-case trace here.</p></div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="toast" id="toast" role="status"></div>
+    <script src="/static/app.js?v=1" defer></script>
+  </body>
+</html>

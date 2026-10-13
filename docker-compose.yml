@@ -1,0 +1,30 @@
+services:
+  runner-image:
+    image: agent-eval-runner:local
+    build:
+      context: .
+      dockerfile: Dockerfile.runner
+    command: ["true"]
+
+  app:
+    build: .
+    ports:
+      - "${APP_PORT:-8000}:8000"
+    environment:
+      RUNNER_BACKEND: docker
+      RUNNER_IMAGE: agent-eval-runner:local
+      RUNNER_WORKSPACE_ROOT: /runner-workspaces
+      RUNNER_SHARED_VOLUME: agent-eval-runner-workspaces
+      DATABASE_PATH: /app/data/evaluations.db
+    volumes:
+      - ./data:/app/data
+      - /var/run/docker.sock:/var/run/docker.sock
+      - runner-workspaces:/runner-workspaces
+    depends_on:
+      runner-image:
+        condition: service_completed_successfully
+    restart: unless-stopped
+
+volumes:
+  runner-workspaces:
+    name: agent-eval-runner-workspaces
